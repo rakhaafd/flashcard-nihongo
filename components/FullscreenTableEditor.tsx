@@ -94,7 +94,7 @@ export const FullscreenTableEditor: React.FC<FullscreenTableEditorProps> = ({
         <table className="w-full text-left text-xs sm:text-sm text-zinc-200">
           <thead className="sticky top-0 bg-zinc-950 border-b border-zinc-800 text-zinc-400 text-[11px] z-10">
             <tr>
-              <th className="p-3 w-14 text-center">No</th>
+              <th className="p-3 w-16 sm:w-20 text-center">No</th>
               <th className="p-3 w-1/3">Hiragana / Kana</th>
               <th className="p-3 w-1/4">Kanji</th>
               <th className="p-3">Arti (Bahasa Indonesia)</th>
@@ -107,9 +107,9 @@ export const FullscreenTableEditor: React.FC<FullscreenTableEditorProps> = ({
                 <td className="p-2 text-center text-zinc-400">
                   <Input
                     type="number"
-                    value={item.no}
+                    value={item.no || idx + 1}
                     onChange={(e) => handleItemChange(idx, 'no', parseInt(e.target.value, 10) || idx + 1)}
-                    className="w-12 h-9 text-center text-xs px-1"
+                    className="w-14 sm:w-16 h-9 text-center text-xs font-mono px-1 border-zinc-800 bg-zinc-950 text-zinc-100 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </td>
                 <td className="p-2">
