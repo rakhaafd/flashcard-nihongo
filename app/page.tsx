@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ImportSection } from '@/components/ImportSection';
 import { FlashcardSection } from '@/components/FlashcardSection';
+import { Footer } from '@/components/Footer';
 
 import { Lesson, KotobaItem } from '@/types/kotoba';
 import { fetchAllLessons, fetchKotobaByLessons } from '@/lib/firestoreService';
@@ -32,8 +33,8 @@ export default function Home() {
   }, [loadData]);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans antialiased">
-      <main className="max-w-2xl mx-auto px-4 py-8 space-y-5">
+    <div className="min-h-screen flex flex-col justify-between bg-zinc-950 text-zinc-100 font-sans antialiased">
+      <main className="w-full max-w-2xl mx-auto px-4 py-8 space-y-5 flex-1">
         
         {/* Minimal Header */}
         <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
@@ -54,6 +55,8 @@ export default function Home() {
         />
 
       </main>
+
+      <Footer />
     </div>
   );
 }
